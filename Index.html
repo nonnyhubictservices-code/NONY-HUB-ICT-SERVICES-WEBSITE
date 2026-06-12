@@ -1,419 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NONY HUB ICT SERVICES | ICT Solutions & Digital Services</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NONY HUB ICT SERVICES</title>
 
-<meta name="description" content="NONY HUB ICT SERVICES - Professional ICT training, web development, graphic design, digital solutions, consultancy, and technology services.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-<style>
-:root{
-    --primary:#0a3d91;
-    --secondary:#00b4d8;
-    --dark:#0b1320;
-    --light:#f8f9fa;
-    --white:#ffffff;
-}
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+        /* Header */
+        header {
+            background: #0A3D91;
+            color: white;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-html{
-    scroll-behavior:smooth;
-}
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
 
-body{
-    background:#fff;
-    color:#333;
-    line-height:1.6;
-}
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
 
-header{
-    background:var(--dark);
-    color:white;
-    position:fixed;
-    width:100%;
-    top:0;
-    z-index:1000;
-}
+        nav ul li {
+            margin-left: 20px;
+        }
 
-.navbar{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 20px;
-}
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-.logo{
-    font-size:1.4rem;
-    font-weight:bold;
-}
+        nav ul li a:hover {
+            color: #00C2FF;
+        }
 
-.logo span{
-    color:var(--secondary);
-}
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6),
+                        rgba(0,0,0,0.6)),
+                        url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80");
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
 
-.nav-links a{
-    color:white;
-    text-decoration:none;
-    margin-left:20px;
-    transition:.3s;
-}
+        .hero-content h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
 
-.nav-links a:hover{
-    color:var(--secondary);
-}
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
 
-.hero{
-    height:100vh;
-    background:
-    linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
-    url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80");
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:white;
-    padding:20px;
-}
+        .btn {
+            display: inline-block;
+            background: #00C2FF;
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
 
-.hero-content h1{
-    font-size:3.5rem;
-    margin-bottom:15px;
-}
+        .btn:hover {
+            background: #008ECC;
+        }
 
-.hero-content p{
-    font-size:1.2rem;
-    max-width:700px;
-    margin:auto;
-}
+        /* Sections */
+        section {
+            padding: 70px 10%;
+        }
 
-.btn{
-    display:inline-block;
-    margin-top:25px;
-    padding:14px 30px;
-    background:var(--secondary);
-    color:white;
-    text-decoration:none;
-    border-radius:50px;
-    transition:.3s;
-    font-weight:bold;
-}
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-.btn:hover{
-    background:var(--primary);
-}
+        .section-title h2 {
+            color: #0A3D91;
+            font-size: 36px;
+        }
 
-section{
-    padding:90px 20px;
-}
+        /* About */
+        .about {
+            text-align: center;
+            max-width: 900px;
+            margin: auto;
+        }
 
-.container{
-    max-width:1200px;
-    margin:auto;
-}
+        /* Services */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
 
-.section-title{
-    text-align:center;
-    margin-bottom:50px;
-}
+        .service-box {
+            background: #f8f8f8;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
 
-.section-title h2{
-    color:var(--primary);
-    font-size:2.3rem;
-}
+        .service-box:hover {
+            transform: translateY(-8px);
+        }
 
-.about{
-    text-align:center;
-    max-width:850px;
-    margin:auto;
-}
+        .service-box h3 {
+            color: #0A3D91;
+            margin-bottom: 15px;
+        }
 
-.services-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
+        /* Contact */
+        .contact {
+            background: #f4f7fc;
+            text-align: center;
+        }
 
-.service-card{
-    background:white;
-    border-radius:12px;
-    padding:30px;
-    text-align:center;
-    box-shadow:0 5px 20px rgba(0,0,0,.1);
-    transition:.3s;
-}
+        .contact p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
 
-.service-card:hover{
-    transform:translateY(-8px);
-}
+        /* Footer */
+        footer {
+            background: #0A3D91;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
 
-.service-card h3{
-    color:var(--primary);
-    margin-bottom:15px;
-}
+        /* Mobile */
+        @media (max-width: 768px) {
 
-.stats{
-    background:var(--primary);
-    color:white;
-}
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
 
-.stats-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
-    text-align:center;
-}
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
 
-.stat h3{
-    font-size:2.5rem;
-}
+            .hero-content h1 {
+                font-size: 35px;
+            }
 
-.contact{
-    background:var(--light);
-}
-
-.contact-box{
-    max-width:700px;
-    margin:auto;
-    text-align:center;
-}
-
-.contact-info{
-    margin-top:20px;
-}
-
-.contact-info p{
-    margin:10px 0;
-    font-size:1.1rem;
-}
-
-footer{
-    background:var(--dark);
-    color:white;
-    text-align:center;
-    padding:25px;
-}
-
-.whatsapp{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    background:#25D366;
-    color:white;
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    text-decoration:none;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:28px;
-    box-shadow:0 4px 10px rgba(0,0,0,.3);
-}
-
-@media(max-width:768px){
-
-.hero-content h1{
-    font-size:2.2rem;
-}
-
-.navbar{
-    flex-direction:column;
-    gap:10px;
-}
-
-.nav-links a{
-    margin:0 10px;
-}
-}
-</style>
+            .hero-content p {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-    <div class="navbar">
-        <div class="logo">NONY HUB <span>ICT SERVICES</span></div>
+    <!-- Header -->
+    <header>
+        <div class="logo">NONY HUB ICT SERVICES</div>
 
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Welcome to NONY HUB ICT SERVICES</h1>
+
+            <p>
+                Providing Professional ICT Solutions,
+                Web Development, Graphic Design,
+                Digital Services and Technology Training.
+            </p>
+
+            <a href="#contact" class="btn">Contact Us</a>
         </div>
-    </div>
-</header>
+    </section>
 
-<section class="hero" id="home">
-    <div class="hero-content">
-        <h1>Empowering Businesses Through Technology</h1>
-        <p>
-            Professional ICT services, digital solutions, training,
-            web development, graphic design, and technology consultancy.
-        </p>
+    <!-- About Section -->
+    <section id="about">
 
-        <a href="#contact" class="btn">Get Started</a>
-    </div>
-</section>
-
-<section id="about">
-    <div class="container">
         <div class="section-title">
             <h2>About Us</h2>
         </div>
 
         <div class="about">
             <p>
-                NONY HUB ICT SERVICES is committed to delivering innovative
-                technology solutions that help individuals, students,
-                entrepreneurs, and organizations thrive in today's digital world.
-                We provide professional ICT services with a focus on quality,
-                reliability, and customer satisfaction.
+                NONY HUB ICT SERVICES is a professional ICT company
+                dedicated to delivering innovative technology solutions,
+                digital services, computer training, web development,
+                graphic design, and technical support to individuals,
+                businesses, and organizations.
             </p>
         </div>
-    </div>
-</section>
 
-<section id="services">
-    <div class="container">
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
 
         <div class="section-title">
             <h2>Our Services</h2>
         </div>
 
-        <div class="services-grid">
+        <div class="services">
 
-            <div class="service-card">
+            <div class="service-box">
                 <h3>ICT Training</h3>
                 <p>
-                    Practical computer training, digital literacy,
-                    and technology skills development.
+                    Professional computer training and digital skills development.
                 </p>
             </div>
 
-            <div class="service-card">
+            <div class="service-box">
                 <h3>Web Development</h3>
                 <p>
-                    Responsive websites, business websites,
-                    portfolios, and online solutions.
+                    Modern, responsive and business-focused websites.
                 </p>
             </div>
 
-            <div class="service-card">
+            <div class="service-box">
                 <h3>Graphic Design</h3>
                 <p>
-                    Logos, flyers, posters, branding materials,
-                    and creative designs.
+                    Logos, flyers, posters, branding and marketing materials.
                 </p>
             </div>
 
-            <div class="service-card">
+            <div class="service-box">
                 <h3>ICT Consultancy</h3>
                 <p>
-                    Professional guidance and technology support
-                    for businesses and organizations.
+                    Expert technology advice and business solutions.
                 </p>
             </div>
 
-            <div class="service-card">
+            <div class="service-box">
                 <h3>Computer Services</h3>
                 <p>
-                    System setup, troubleshooting,
-                    software installation, and maintenance.
+                    Software installation, maintenance and troubleshooting.
                 </p>
             </div>
 
-            <div class="service-card">
+            <div class="service-box">
                 <h3>Digital Solutions</h3>
                 <p>
-                    Online business tools, productivity systems,
-                    and digital transformation support.
+                    Helping businesses succeed through technology.
                 </p>
             </div>
 
         </div>
 
-    </div>
-</section>
+    </section>
 
-<section class="stats">
-    <div class="container">
-        <div class="stats-grid">
-
-            <div class="stat">
-                <h3>100%</h3>
-                <p>Commitment</p>
-            </div>
-
-            <div class="stat">
-                <h3>24/7</h3>
-                <p>Support</p>
-            </div>
-
-            <div class="stat">
-                <h3>Quality</h3>
-                <p>Service Delivery</p>
-            </div>
-
-            <div class="stat">
-                <h3>Innovation</h3>
-                <p>Technology Solutions</p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section class="contact" id="contact">
-
-    <div class="container">
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
 
         <div class="section-title">
             <h2>Contact Us</h2>
         </div>
 
-        <div class="contact-box">
+        <p>
+            We are ready to help you with all your ICT needs.
+        </p>
 
-            <p>
-                Ready to work with us? Reach out today and let's help
-                you achieve your technology goals.
-            </p>
+        <p>
+            <strong>Email:</strong>
+            nonnyhubictservices@gmail.com
+        </p>
 
-            <div class="contact-info">
-                <p><strong>Email:</strong> nonnyhubictservices@gmail.com</p>
-                <p><strong>Business Name:</strong> NONY HUB ICT SERVICES</p>
-                <p><strong>Availability:</strong> Monday - Saturday</p>
-            </div>
+        <p>
+            <strong>Business Name:</strong>
+            NONY HUB ICT SERVICES
+        </p>
 
-            <a href="mailto:nonnyhubictservices@gmail.com" class="btn">
-                Send Email
-            </a>
+        <br>
 
-        </div>
+        <a href="mailto:nonnyhubictservices@gmail.com" class="btn">
+            Send Email
+        </a>
 
-    </div>
+    </section>
 
-</section>
-
-<footer>
-    <p>
-        © 2026 NONY HUB ICT SERVICES. All Rights Reserved.
-    </p>
-</footer>
-
-<a class="whatsapp" href="mailto:nonnyhubictservices@gmail.com">
-✉
-</a>
+    <!-- Footer -->
+    <footer>
+        <p>
+            © 2026 NONY HUB ICT SERVICES. All Rights Reserved.
+        </p>
+    </footer>
 
 </body>
 </html>
